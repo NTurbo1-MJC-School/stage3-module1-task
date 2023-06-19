@@ -1,7 +1,7 @@
 package com.mjc.school;
 
 import com.mjc.school.controller.Controller;
-import com.mjc.school.controller.Impl.ControllerImpl;
+import com.mjc.school.controller.impl.ControllerImpl;
 import com.mjc.school.service.Dto.NewsDto;
 
 import java.util.InputMismatchException;

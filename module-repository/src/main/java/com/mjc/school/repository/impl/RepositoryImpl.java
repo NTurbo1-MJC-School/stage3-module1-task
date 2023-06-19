@@ -1,4 +1,4 @@
-package com.mjc.school.repository.Impl;
+package com.mjc.school.repository.impl;
 
 import com.mjc.school.repository.Repository;
 import com.mjc.school.repository.model.NewsModel;
