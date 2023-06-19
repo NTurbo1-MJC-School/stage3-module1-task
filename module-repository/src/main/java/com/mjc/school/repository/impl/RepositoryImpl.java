@@ -3,15 +3,17 @@ package com.mjc.school.repository.impl;
 import com.mjc.school.repository.Repository;
 import com.mjc.school.repository.model.NewsModel;
 import com.mjc.school.repository.utils.DataSource;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class RepositoryImpl implements Repository<NewsModel> {
 
-    private DataSource dataSource;
+    private final DataSource dataSource;
     private RepositoryImpl() {
         dataSource = new DataSource();
     }
@@ -33,12 +35,12 @@ public class RepositoryImpl implements Repository<NewsModel> {
     }
 
     @Override
-    public List<NewsModel> getAll() {
+    public List<NewsModel> readAll() {
         return dataSource.getNewsModelList();
     }
 
     @Override
-    public NewsModel getById(Long id) {
+    public NewsModel readById(Long id) {
         for (NewsModel newsModel : dataSource.getNewsModelList()) {
             if (newsModel.getId().equals(id)) {
                 return newsModel;

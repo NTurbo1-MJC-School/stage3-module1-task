@@ -29,7 +29,7 @@ public class ServiceImpl implements Service<NewsDto> {
 
     @Override
     public List<NewsDto> getAll() {
-        List<NewsModel> newsModelList = repository.getAll();
+        List<NewsModel> newsModelList = repository.readAll();
         List<NewsDto> newsDtoList = new ArrayList<>();
 
         ModelMapper modelMapper = new ModelMapper();
@@ -43,7 +43,7 @@ public class ServiceImpl implements Service<NewsDto> {
     @Override
     public NewsDto getById(Long id) {
         ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(repository.getById(id), NewsDto.class);
+        return modelMapper.map(repository.readById(id), NewsDto.class);
     }
 
     @Override

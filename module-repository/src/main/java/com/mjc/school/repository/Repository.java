@@ -6,9 +6,9 @@ public interface Repository<T> {
 
     public T create(T t);
 
-    public List<T> getAll();
+    public List<T> readAll();
 
-    public T getById(Long id);
+    public T readById(Long id);
 
     public T update(T t);
 
