@@ -21,13 +21,13 @@ public class ControllerImpl implements Controller<NewsDto>{
     }
 
     @Override
-    public List<NewsDto> getAll() {
-        return service.getAll();
+    public List<NewsDto> readAll() {
+        return service.readAll();
     }
 
     @Override
-    public NewsDto getById(Long id) {
-        return service.getById(id);
+    public NewsDto readById(Long id) {
+        return service.readById(id);
     }
 
     @Override

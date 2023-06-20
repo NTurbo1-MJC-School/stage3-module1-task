@@ -5,6 +5,7 @@ import com.mjc.school.repository.Repository;
 import com.mjc.school.repository.model.NewsModel;
 import com.mjc.school.service.Dto.NewsDto;
 import com.mjc.school.service.Service;
+import com.mjc.school.service.utils.Validator;
 import org.modelmapper.ModelMapper;
 
 import java.util.ArrayList;
@@ -12,10 +13,12 @@ import java.util.List;
 
 public class ServiceImpl implements Service<NewsDto> {
 
-    private Repository repository;
+    private Repository<NewsModel> repository;
+    private Validator validator;
 
     public ServiceImpl() {
         repository = RepositoryImpl.getRepoInstance();
+        validator = new Validator();
     }
 
     @Override
@@ -28,7 +31,7 @@ public class ServiceImpl implements Service<NewsDto> {
     }
 
     @Override
-    public List<NewsDto> getAll() {
+    public List<NewsDto> readAll() {
         List<NewsModel> newsModelList = repository.readAll();
         List<NewsDto> newsDtoList = new ArrayList<>();
 
@@ -41,7 +44,7 @@ public class ServiceImpl implements Service<NewsDto> {
     }
 
     @Override
-    public NewsDto getById(Long id) {
+    public NewsDto readById(Long id) {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(repository.readById(id), NewsDto.class);
     }

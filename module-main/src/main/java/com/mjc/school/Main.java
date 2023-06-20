@@ -24,13 +24,13 @@ public class Main {
             Controller<NewsDto> controller = new ControllerImpl();
 
             if (command == 1) {
-                System.out.println(controller.getAll());
+                System.out.println(controller.readAll());
                 main(args);
             } else if (command == 2) {
                 Scanner idScanner = new Scanner(System.in);
                 System.out.println("Enter news id:");
                 int id = idScanner.nextInt();
-                System.out.println(controller.getById(Long.parseLong(String.valueOf(id))));
+                System.out.println(controller.readById(Long.parseLong(String.valueOf(id))));
                 main(args);
             } else if (command == 3) {
                 Scanner fieldScanner = new Scanner(System.in);
