@@ -6,11 +6,17 @@ import com.mjc.school.repository.model.NewsModel;
 import com.mjc.school.service.Dto.NewsDto;
 import com.mjc.school.service.Service;
 import com.mjc.school.service.utils.Validator;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.modelmapper.ModelMapper;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
+@AllArgsConstructor
 public class ServiceImpl implements Service<NewsDto> {
 
     private Repository<NewsModel> repository;
